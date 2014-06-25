@@ -62,11 +62,12 @@ Formerly "GTFS_Search_Near" and "things-near-my-bus-stop"
 <li>Bill Schwulst for letting me know about it.</li>
 <li>Brett Lord-Castillo</li>
 <li>Elenore (who's last name I need to look up.)</li>
-<li>My Awesome Team! *see previous section.)</li>
+<li>My Awesome Team! (see previous section.)</li>
 <li>Code for America</li>
 <li>Build for STL</li>
 <li>T-REX</li>
 <li>And YOU for reading this page and leraning more about this project.</li>
+</ul>
 
 <h2>Copyright and Licensing</h2>
 <p>Last I checked, this project was under a BSD or MIT software license.  I'll need to paste that part later.</p>
