@@ -9,38 +9,35 @@
         height:600px;
       }
     </style>
+    <!-- NOTE: We're stuck using the jQuery lines twice until migration to jQuery 2 sets in. -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- TODOL No coffee-script today.  But soon. -->
   </head>
   <body>
-    <!-- TODO: put the form before the map -->
+    <div id="header"><h1>DIVE</h1><h2>GTFS Local Search</h2>
+      <!-- TODO: Nav bar to other pages -->
+    </div>
     <!-- TODO: list search results after teh map div -->
     <!-- TODO: can the select element be a single line? -->
     <!-- TODO: SEO-ify the input field that I added to replace the select element. -->
-    <div id="map"></div>
     <div>I'm on the
-      <select id="bus-routes">
-
-      </select>
+      <select id="bus-routes"></select>   <!-- Trying this out.  If it breaks, put this back. -->
        looking for
       <input name="things" id="things" value=""> <!-- Let's not limit our search to two specific queries -->
-      <!--
-      <select id="things">
-        <option>bar</option>
-        <option>pharmacy</option>
-      </select>
-      -->
       <button id="find-things">Find it!</button>
       <!-- TODO: Advanced options.
       What if I want to catch a bus at another time or be somewhere at a specific time?
       What if I wanted to stop at several places? (Multiroute!)
+      What if I need to find a bus?
       -->
     </div>
-    <!-- TODO: Isn't there a single line for jQuery? Use that. -->
-    <!-- TODO: All these Scripts need to go in the header! -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <div id="map"></div>
+    <div id="results">Results</div> <!-- TODO: As an alternative to putting individual results in bubbles, why not list our result below -->
+    <div id="footer">(c) The Awsome Dive Team! Fork us on Github!</div>
 
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    
+    <!-- TODO: All these Scripts need to go in the header! -->
     <!-- TODO: Can we move this part to an external file? -->
     <script type="text/javascript">
       var map = L.map('map'),
@@ -48,6 +45,8 @@
           query_near_route_api = 'http://metro-stl-routes-venues-api.herokuapp.com/routes/',
           markers;
 
+      // Can we create a JavaScript class (or Object) to put these functions in and define it as part of our library?
+      // Dive.js
       function setMapToCurrentLocation(data) {
         var latitude = data.coords['latitude'];
         var longitude = data.coords['longitude'];
@@ -124,6 +123,7 @@
             }
         }
       }
+      // TODO: What was the jQuery command for putting this command in the header?
       $(document).ready(function(){
         navigator.geolocation.getCurrentPosition(setMapToCurrentLocation);
         $('button#find-things').click(findThingsWithSelection);
