@@ -1,30 +1,47 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <title>Dive: GTFS Local Search</title>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <style type="text/css">
       #map {
+        width:800px;  /* Aspect Ratio! */
         height:600px;
       }
     </style>
   </head>
   <body>
+    <!-- TODO: put the form before the map -->
+    <!-- TODO: list search results after teh map div -->
+    <!-- TODO: can the select element be a single line? -->
+    <!-- TODO: SEO-ify the input field that I added to replace the select element. -->
     <div id="map"></div>
     <div>I'm on the
       <select id="bus-routes">
 
       </select>
-       looking for a
+       looking for
+      <input name="things" id="things" value=""> <!-- Let's not limit our search to two specific queries -->
+      <!--
       <select id="things">
         <option>bar</option>
         <option>pharmacy</option>
       </select>
-      <button id="find-things">Find the things!</button>
+      -->
+      <button id="find-things">Find it!</button>
+      <!-- TODO: Advanced options.
+      What if I want to catch a bus at another time or be somewhere at a specific time?
+      What if I wanted to stop at several places? (Multiroute!)
+      -->
     </div>
+    <!-- TODO: Isn't there a single line for jQuery? Use that. -->
+    <!-- TODO: All these Scripts need to go in the header! -->
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    
+    <!-- TODO: Can we move this part to an external file? -->
     <script type="text/javascript">
       var map = L.map('map'),
           route_stop_coords = [],
@@ -83,7 +100,7 @@
 
       function findThingsWithSelection() {
         var route = $('select#bus-routes').val(),
-            thing = 'bar', //$('select#things').val(),
+            thing = 'bar', //$('select#things').val(),    // TODO: $('input#things').val()?
             url;
 
         clearMap();
