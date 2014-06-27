@@ -1,0 +1,22 @@
+Dive TODO list:
+
+[ ] Write AWK scripts that display GTFS data as tab sperated tables that can easily be viewed in command line.
+[ ] Develop a JSON file from the data in routes.txt and shapes.txt that defines the shape files for each route.
+        (This may require some hacker inginuity, sed/awk script)
+[ ] We may need to SQL-ify the other text files in this directory.
+[ ] DON'T FORGET TO PUT A COPY ON MY RASPBERRY PI HACKTOP!
+[ ] Add an error function to "navigator.geolocation.getCurrentPosition(success, error, options)", just in case somone says "no" to letting their computer location being used.
+[ ] Put a copy of ftp://metrostlouis.org/Transit/google_transit.zip on my computer. Extract and di all that JSON stuff I talked about.
+        For more infor on what each file is for, goto https://developers.google.com/transit/gtfs/reference
+[ ] Don't forget to find some way to add weather data.  (National Weather Service FTW!)
+[ ] Why not add crime data from Peter Griess's CrimeDB.org  (See if he has a github, and try to collab with him.)
+[ ] Brett Lord-Castillo has all sorts of St. Louis County GIS stuff on his github (https://github.com/stlouisco), clone that.
+[ ] Find someone from St. Louis City whose doing what Brett does to get City GIS.
+[ ] Ditto for Madison and St. Clair Counties in Illinois.
+[ ] And YES I will find some way to expand this project to St. Charles County, you know damn well why!
+[ ] Try to find a way to SQL (rather NoSQL) without using MongoDB. (It broke on my Hacktop because Raspberry Pi!) (I still got SQLite. Try using that.)
+[ ] Nomantim (replace that with withatever FourSquare OAUTH thingy we used eariler this month.)
+
+The magic phras that should be in everyones lexicon for projects like this: T.O.D. (Transit Oriented Development)
+I'm calling out the East West Gateway Council on this because I could have used this like years ago!
+
