@@ -15,39 +15,50 @@ Formerly "GTFS_Search_Near" and "things-near-my-bus-stop"
 <p>Given a trip route and desired search subject, this website displays a map of route and subject locations within 500 meters of the stops on the route.</p>
 <p>Short answer: Finds places along the bus route you are on.</p>
 
+<p>06/28/2014: We now have access to the "things-near-my-bus-stop-api" project.  Consider it merged with this project.  We are currently sprucing up the code.</p>
+
 <h2>What's used to make this work?</h2>
 <ul>
   <li>JavaScript</li>
   <ul>
     <li>Node GTFS (Metro St. Louis uses it.)</li>
-    <li>Node.js</li>
+    <li>Node.js (Eventually.)</li>
     <li>Leaflet.js</li>
     <ul>
       <li>Open Street Maps</li>
     </ul>
-    <li>jQuery (something I plan to add.)</li>
+    <li>jQuery</li>
     <li>Coffee Script (something I also plan to add.)</li>
   </ul>
   <li>FourSquare OAUTH (though I plan on replacing it with something that won't block you for scraping more than 1000 records.)</li>
+  <ul>
+   <li>Notamatim should replace this.</li>
+  </ul>
   <li>MongoDB (which is currently broken on my computer, Thanks, Raspberry Pi.)</li>
+  <ul>
+   <li>Since MongoDB is currently broken on my computer (and it takes 16 hours to reinstall on the pokey Raspberry Pi), I've decided to use SQLite as an alternative.  It seems to be working well with Ruby on Rails. Why not Python?</li>
+  </ul>
   <li>Python</li>
   <ul>
     <li>Bottle.py (because Flask wasn't working. That and this was better.)</li>
+    <li>requests</li>
+    <li>wsgiref</li>
   </ul>
-  <li>Heroku</li>
+  <li>Heroku (for deployment)</li>
 </ul>
   
 
 <h2> What plans do I have for it?</h2>
-<p>Just to make me happy, I'd like to add weather information to it.  It's no fun standing a a shelterless bus stop when the weather sucks.</p>
+<p>Just to make me happy, I'd like to add weather information to it.  It's no fun standing at a shelterless bus stop when the weather sucks.  This information will be scraped from the National Weather Service, because I love those guys!</p>
 <p>Foursquare OAUTH will be replaced with Open Street Map's Nominantim.</p>
 <p>I might collab with Peter Greiss to add crime data from his Crimedb.org project. (No point of standing at a bus stop in a bad neighborhood.  Although, if there is one thing crime stats do not show is that once an incident occurs, it shouldn't happen again...at least in theory.)</p>
 <p>There was some websitre I found  awhile back that had a list of people and addresses.  Though, not to rock the boat over data and privacy, that part of the project might just stay offline.</p>
 <p>Depending on my mood, I might rewrite this project in Ruby.  I'm learning Python and Node.js, but if I can dabble with Rails as well as Sass, Compass, HAML, etc., that would be cool.</p>
 
+
 <h2>Our Awesome Team</h2>
 <ul>
-<li>Jeremia Kimelman</li>
+<li>Jeremia Kimelman - check out <a href="https://github.com/jeremiak">his github</a></li>
 <li>LeAnne Lis</li>
 <li>Vincent Lis</li>
 <li>Noah Williams</li>

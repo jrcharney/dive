@@ -16,6 +16,7 @@ Dive TODO list:
 [ ] And YES I will find some way to expand this project to St. Charles County, you know damn well why!
 [ ] Try to find a way to SQL (rather NoSQL) without using MongoDB. (It broke on my Hacktop because Raspberry Pi!) (I still got SQLite. Try using that.)
 [ ] Nomantim (replace that with withatever FourSquare OAUTH thingy we used eariler this month.)
+[ ] Look up Mapbox. It uses leaflet and OSM.
 
 The magic phras that should be in everyones lexicon for projects like this: T.O.D. (Transit Oriented Development)
 I'm calling out the East West Gateway Council on this because I could have used this like years ago!

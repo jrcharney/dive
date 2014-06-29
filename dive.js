@@ -15,8 +15,7 @@
 
 
 function Dive(api){
- // this.x = x; // where x is an argument
- //this.map = L.map('map');		// Create a new Leaflet map. // TODO: watch this line.
+ //this.map = L.map('map');
  this.route_stop_coords = [];
  this.markers = null;
  this.api = api;	// query_near_route_api = 'http://metro-stl-routes-venues-api.herokuapp.com/routes/',	// I changed the name of this variable.
@@ -56,7 +55,6 @@ Dive.prototype.handleJsonResponse = function(stops) {
  this.map.fitBounds(polyline.getBounds());
 }
 
-
 // TODO: Sort the routes by route number
 // TODO: Why do I have the feeling that older routes are listed? (Try to eliminate them!)
 // TODO: Should I add an arugment to this function to use 'http://www.corsproxy.com/gtfs-api.herokuapp.com/api/routes/metro-st-louis'?
@@ -83,7 +81,7 @@ Dive.prototype.loadRoutesIntoSelect = function(selectElem,source) {
  });
 }
 
-/* This function looks ready */
+/* This function is still broken */
 Dive.prototype.clearMap = function() {
  this.route_stop_coords = [];
  for(i in this.map._layers) {
@@ -100,7 +98,7 @@ Dive.prototype.clearMap = function() {
 
 // TODO: This function needs a new name
 // TODO: This function needs to get data from a input['text'] field, not a select!
-// TODO: SEO-ify the input field
+// TODO: SEO-ify the input field?
 Dive.prototype.findThingsWithSelection = function() {
  var route = $('select#bus_routes').val(),
  thing = $('input#things').val();	// Why don't we call 'thing' 'query' instead?
@@ -109,17 +107,16 @@ Dive.prototype.findThingsWithSelection = function() {
  //url = query_near_route_api + route + '?query=' + thing;
  var url = this.api + route + '?query=' + thing;
  console.log(url);
- $.getJSON(url, this.handleJsonResponse);		// TODO: Can I use 'this' in a function call?  So far it looks like a yes.
+ $.getJSON(url, this.handleJsonResponse);
 }
 
 // I think this part should stay in the HTML document
 // TODO: What if the user doesn't want to use their current location?
 // TODO: Find a new Routes API
 $(document).ready(function(){
- dive = new Dive('http://metro-stl-routes-venues-api.herokuapp.com/routes/');
+ dive = new Dive('http://metro-stl-routes-venues-api.herokuapp.com/routes/');	// This source is dead and needs to be replaced.
  navigator.geolocation.getCurrentPosition(dive.setMapToCurrentLocation);	// The browser will ask if you want to share your location?, Add a function for error later.
  $('button#find_things').click(dive.findThingsWithSelection);
  // This is fine, don't mess with it!
  dive.loadRoutesIntoSelect('select#bus_routes','http://www.corsproxy.com/gtfs-api.herokuapp.com/api/routes/metro-st-louis');
-
 });
